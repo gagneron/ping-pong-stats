@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset='utf-8'>
+	<title>Codeigniter Advanced Assignment</title>
+	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript" src='/assets/js/jquery.tablesorter.js'></script>
+	<style type="text/css">
+		.bordered{border:1px solid gray;}
+		.navbar{background-color:#273D7E;}
+		h2{color:white;}
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.table').tablesorter();
+		});
+
+	</script>
+</head>
+<body>
+	<div class='container'>
+		<nav class='navbar navbar-default' role='navigation'>
+			<ul class='nav navbar-nav'>
+				<li><h2>Ping Pong Log</h2></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</nav>
+		<div class='row'>
+		
+			 <!-- var_dump($players); -->
+		<div class='col-xs-3'>
+					<table class='table table-striped table-condensed'>
+						<thead>
+							<th>Name</th>
+							<th>Wins</th>
+							<th>Losses</th>
+						</thead>
+						<tbody>
+			<?php foreach($players as $player)
+			{ ?>
+				
+			
+							<tr>
+								<th><?= $player['first_name'] ?></th>
+								<td><?= $player['wins'] ?></td>
+								<td><?= $player['losses'] ?></td>
+					
+							</tr>
+			<?php } ?>
+								
+						</tbody>
+					</table>
+				</div>
+		</div><!--end of div class row-->
+
+		<div class='row'>
+		<form action='stats_controller/score_process' method='post' class='form-horizontal col-xs-12' role='form'>
+			<h3>Input Scores</h3>
+			<div class="form-group">
+			    <label for="team1" class="col-xs-2 control-label">Winner</label>
+			    <div class="col-xs-3">
+			    	<input class='form-control' type="text" id="team1" name='team1' placeholder="name">
+			    </div>
+			     <label for="team2" class="col-xs-2 control-label">Loser</label>
+			    <div class="col-xs-3">
+			    	<input class='form-control' type="text" id="team2" name='team2' placeholder="name">
+			    </div>
+			</div>
+			<div class="form-group">
+			    <label for="score1" class="col-xs-2 control-label">Score</label>
+			    <div class="col-xs-3">
+			    	<input class='form-control' type="text" id="score1" name='score1' placeholder="player 1 score">
+			    </div>
+			     <label for="score2" class="col-xs-2 control-label">Score</label>
+			    <div class="col-xs-3">
+			    	<input class='form-control' type="text" id="score2" name='score2' placeholder="player 2 score">
+			    </div>
+			</div>
+			<button class='btn btn-success' type='submit'>Submit</button>
+		</form>
+		</div>
+		<hr>
+ 		<div class='row'>
+			<?php
+				// var_dump($scores);
+				foreach($scores as $score)
+				{ ?>
+				
+				<div class='col-xs-3'>
+					<table class='table table-striped table-condensed'>
+						<thead>
+							<tr>
+								<?= 
+								$score['created_at'] = (date('M d, Y g:ia ', strtotime($score['created_at'])));
+								$score['created_at'] ?>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th><?= $score['winner_name'] ?></th>
+								<td><?= $score['winner_score'] ?></td>
+							</tr>
+							<tr>
+								<td><?= $score['loser_name'] ?></td>
+								<td><?= $score['loser_score'] ?></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+		
+			<?php } ?>
+		</div><!--end of div class row-->
+		
+	</div>
+</body>
+</html>

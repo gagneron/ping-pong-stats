@@ -1,0 +1,119 @@
+<style type="text/css">
+		html,body{width:100%; height :100%;}
+		h2{color:white; padding-left:20px; margin-top:10px; margin-bottom:10px;}
+		body{background-image:url('assets/img/pingpong6.jpg');}
+		abbr[title] { cursor:pointer; border-bottom:none;}
+		th{cursor:pointer;}
+	
+
+		.container{padding:0px; overflow:auto;}
+		.main-page{margin-left:10px; overflow:auto;}
+		.bordered{border:1px solid lightgray;}
+		.navbar{background-color:#273D7E; margin:0;}
+		
+		.btn-xs{float:right;}
+		.btn-success{float:right;margin-right:10px;}
+		.winp-column{min-width: 55px;}
+
+		.table-standings tbody tr .hoverme{text-align:left; min-width:5px; text-align:left; padding:5px 0px;}
+		.table-standings td:nth-child(1), .table-standing td:nth-child(1){min-width:80px; text-align:left; padding:5px 0px;}
+		.table-standings th, .table-standings td, .table-standing th, .table-standing td{ padding-left:0px; min-width:55px; text-align:center;}
+		.table-standings th:nth-child(1), .table-standing th:nth-child(1){min-width:70px; text-align:left; padding-left:0px; padding-right:0px;}
+		.table-standings th:nth-child(2), .table-standing th:nth-child(2){padding-left:0px; padding-right:0px;}
+		.table-standings td:nth-child(2), .table-standing td:nth-child(2){padding-left:0px; padding-right:0px;}
+		.table-standings th:nth-child(n+5), .table-standing th:nth-child(n+5){max-width:75px; padding-left:0;}
+		.table-standings th:nth-child(5), .table-standing th:nth-child(5), .table-standings th:nth-child(6), .table-standing th:nth-child(6), .table-standings td:nth-child(6), .table-standing td:nth-child(6){max-width:70px; padding-right:0;}
+		.table-standings td:nth-child(7), .table-standing td:nth-child(7){padding-left:0;}
+
+
+		.table-standingsnew td:nth-child(1), .table-standing td:nth-child(1){min-width:70px; text-align:left; padding:5px 0px;}
+		.table-standingsnew th, .table-standingsnew td{ min-width:55px; text-align:center;}
+		.table-standingsnew th:nth-child(1){min-width:70px; text-align:left;}
+		.table-standingsnew th:nth-child(n+5) {max-width:75px; padding-left:0;}
+		.table-standingsnew th:nth-child(5){max-width:70px; padding-right:0;}
+		.table-standingsnew th:nth-child(2){padding-left:0px; padding-right:0px;}
+		.table-standingsnew td:nth-child(2){padding-left:0px; padding-right:0px;}
+		.table-standingsnew th:nth-child(n+5) {max-width:75px; padding-left:0;}
+		.table-standingsnew th:nth-child(5), .table-standingsnew th:nth-child(6), .table-standingsnew td:nth-child(6){max-width:70px; padding-right:0;}
+		.table-standingsnew td:nth-child(7){padding-left:0;}
+
+		.hidebutton {padding:1px 0px 1px 2px; border:none;  background: rgba(54, 25, 25, .0);}
+		.hidebutton b:hover{color:green;}
+		.opponents-head{text-align:center; margin:0; color:green;}
+
+		.td{text-align:center; min-width:60px;}
+		.add-player{padding:10px; display:block;}
+		.block{display:block; width:100%;}
+		.stiff{min-height:235px; float:left; display:block;}
+		#stiff{min-height:180px;}
+		
+		.singles-scores,.dubs-scores{width:90%; display:block; max-height:420px; overflow-y:scroll;padding-bottom:30px; padding-top:20px;}
+		.box2{margin-bottom:30px; max-width:1000px;}
+		#new-player-submit{margin:5px 0px;}
+		.tablea{display:inline; float:left; width:auto; margin:20px 15px;}
+		.tables-div{overflow:auto; display:block;}
+		.float-right{float:right; color:white;}
+		.center{margin-left:320px;}
+		.delete-form{height:35px;}
+		.text{font-weight: normal;} /* textillate font in input names for scores */
+		/*.box{ overflow: auto;}
+		.box2{overflow:auto; width:100%;}*/
+		.stats{float:left; display:inline-block;margin-right:30px;}
+		/*.float-lefty{float:left;}*/
+		#small-div, #fake-table{width:0px; margin-left:0px; margin-right:0px;}
+		.delete{display:none;}
+		.stats-container{overflow:auto; width:100%; display:inline-block;}
+		.clearplease{display:block; clear:both;  height:0px;}
+		.form-horizontal{display:inline;}
+		#name{width:200px;}
+		
+		/*.top-section{overflow:auto;}*/
+		#dropdown { position:absolute; width:200px;  }
+		#dropdown li:hover { background:#ccc; cursor:pointer; }
+		.select{float:left; margin:5px; margin-left:25px;}
+		.select label{min-width:50px;}
+		.ui-button-text{height:8px;margin-top:15px;}
+		.ui-button-icon-primary .ui-icon .ui-icon-triangle-1-s{margin:50px;}
+		.ui-autocomplete-input{height:30px; width:100px; padding-left:5px; border-radius:5px;}
+		
+		.tx{border:1px solid lightgray; margin:5px; padding:2px; border-radius:4px;}
+		.selectpicker{width:10px;}
+		.bootstrap-select > .btn { width:120px }
+		.bootstrap-select:not([class*="span"]):not([class*="col-"]):not([class*="form-control"]) {
+			    width: 140px;
+			}
+		.btn-success{margin-right:40px;}
+			.nav > li > a {
+				  padding: 5px 10px;
+				}
+		.green{color:green;}
+		 
+		#ball {
+		    border-radius: 50%;
+		    background-color: orange;
+		    position:absolute;
+		    left:50%;   
+		    z-index:2;
+		    display:none;
+		    border:1px solid #999;
+		 	box-shadow: inset -25px -25px 40px rgba(0,0,0,.3);
+		    /*------------- GRADIENT GENERATED FROM http://www.colorzilla.com/gradient-editor/ ----------------------- */
+		    background: orange; /* Old browsers */
+		   background-image: -webkit-linear-gradient(-45deg, rgba(255,255,220,.3) 0%, transparent 100%);
+			background-image: -moz-linear-gradient(-45deg, rgba(255,255,220,.3) 0%, transparent 100%);  
+			background-image: -o-linear-gradient(-45deg, rgba(255,255,220,.3) 0%, transparent 100%);
+			background-image: -ms-linear-gradient(-45deg, rgba(255,255,220,.3) 0%, transparent 100%);
+
+		    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eaeaea', endColorstr='#707070',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+		}
+		 
+		#shadow {
+		    border-radius: 50%;
+		    background-color: #CCC;
+		    position:absolute;
+		    bottom:10px;
+		    left:50%;
+		    z-index:1;
+		    display:none;
+		}
+	</style>
